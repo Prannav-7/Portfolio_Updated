@@ -1,0 +1,305 @@
+:root {
+  --primary-color: #2c3e50;
+  --primary-dark: #1a252f;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+  --bg-light: #ffffff;
+  --bg-darker: #f8f9fa;
+  --border-color: #e0e0e0;
+  --shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app.dark {
+  --text-dark: #ecf0f1;
+  --text-light: #bdc3c7;
+  --bg-light: #2c3e50;
+  --bg-darker: #34495e;
+  --border-color: #495a70;
+}
+
+.contact {
+  padding: 100px 0;
+  background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-light) 100%);
+  animation: slideInUp 0.8s ease-out;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+.info-item {
+  padding: 25px;
+  background: var(--bg-light);
+  border-radius: 12px;
+  border-left: 4px solid var(--secondary-color);
+  transition: var(--transition);
+  animation: scaleIn 0.6s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.info-item:nth-child(1) { animation-delay: 0.3s; }
+.info-item:nth-child(2) { animation-delay: 0.4s; }
+.info-item:nth-child(3) { animation-delay: 0.5s; }
+.info-item:nth-child(4) { animation-delay: 0.6s; }
+
+.info-item:hover {
+  transform: translateX(10px);
+  box-shadow: var(--shadow);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.info-item h3 {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.info-item p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.info-item a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.info-item a:hover {
+  color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.whatsapp-link {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white !important;
+  padding: 14px 24px;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-weight: 700;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--bg-darker);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--secondary-color) !important;
+  font-weight: 600;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.social-links a:hover {
+  background: var(--secondary-color);
+  color: white !important;
+  border-color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.contact-form {
+  background-color: var(--bg-light);
+  padding: 40px;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow);
+  animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+.success-message {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  animation: slideInDown 0.5s ease-out;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.form-group:nth-child(2) { animation-delay: 0.3s; }
+.form-group:nth-child(3) { animation-delay: 0.4s; }
+.form-group:nth-child(4) { animation-delay: 0.5s; }
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-darker);
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  background-color: var(--bg-light);
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+  font-weight: 400;
+}
+
+.contact-form .btn {
+  width: 100%;
+  padding: 16px 24px;
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+  text-transform: uppercase;
+  animation: slideInUp 0.6s ease-out 0.6s both;
+}
+
+.contact-form .btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.5);
+}
+
+.contact-form .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-form {
+    padding: 25px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .contact-form .btn {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  .contact-info {
+    gap: 20px;
+  }
+
+  .info-item {
+    padding: 20px;
+  }
+
+  .info-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-icon {
+    font-size: 2rem;
+  }
+
+  .social-links {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .social-links a {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .whatsapp-btn {
+    width: 100%;
+    padding: 12px 16px;
+  }
+}
