@@ -40,6 +40,41 @@ const PROJECTS = [
     description: 'Mobile-friendly shopping application with product filtering and dynamic cart management.',
     tags: ['JavaScript', 'React', 'CSS'],
     github: 'https://github.com/Prannav-7/shop-app'
+  },
+  {
+    id: 6,
+    title: 'Nutz Login Page',
+    description: 'Modern authentication UI with validation, responsive design, and smooth animations.',
+    tags: ['JavaScript', 'HTML/CSS', 'Form Validation'],
+    github: 'https://github.com/Prannav-7/Nutz_LoginPage'
+  },
+  {
+    id: 7,
+    title: 'Text Converter',
+    description: 'Utility tool for text manipulation, conversion, and formatting with multiple options.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    github: 'https://github.com/Prannav-7/Text_Convertor'
+  },
+  {
+    id: 8,
+    title: 'Hostel Management System',
+    description: 'Flutter-based hostel management application for room allocation and student records.',
+    tags: ['Flutter', 'Dart', 'Mobile'],
+    github: 'https://github.com/Prannav-7/Hostel_Management_usingFlutter'
+  },
+  {
+    id: 9,
+    title: 'Face Detection IOT',
+    description: 'IoT project implementing face detection and recognition using computer vision.',
+    tags: ['Python', 'IoT', 'Computer Vision'],
+    github: 'https://github.com/Prannav-7/FaceDetectionUsingIOT'
+  },
+  {
+    id: 10,
+    title: 'Jaimaruthi Electrical Store',
+    description: 'E-commerce platform for electrical and hardware products with complete shopping workflow.',
+    tags: ['JavaScript', 'React', 'E-commerce'],
+    github: 'https://github.com/Prannav-7/JaimaruthiElectricalandHardwaresStore-ElectroStore'
   }
 ]
 

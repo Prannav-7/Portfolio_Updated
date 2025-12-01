@@ -23,12 +23,14 @@ export default function Contact() {
     setLoading(true)
     
     try {
-      // Send email directly using mailto with a backup service
-      const mailtoLink = `mailto:prannav2511@gmail.com?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(
+      // Create Gmail compose link with pre-filled fields
+      const gmailLink = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=prannav2511@gmail.com&su=${encodeURIComponent(
+        `Portfolio Contact from ${formData.name}`
+      )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       )}`
       
-      // For better UX, try to send via a free service first
+      // Try to send via web3forms first
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -47,16 +49,18 @@ export default function Contact() {
         setFormData({ name: '', email: '', message: '' })
         setTimeout(() => setSubmitted(false), 5000)
       } else {
-        // Fallback to mailto
-        window.location.href = mailtoLink
+        // Fallback to Gmail
+        window.open(gmailLink, '_blank')
       }
     } catch (error) {
       console.error('Error:', error)
-      // Final fallback to mailto
-      const mailtoLink = `mailto:prannav2511@gmail.com?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(
+      // Final fallback to Gmail
+      const gmailLink = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=prannav2511@gmail.com&su=${encodeURIComponent(
+        `Portfolio Contact from ${formData.name}`
+      )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       )}`
-      window.location.href = mailtoLink
+      window.open(gmailLink, '_blank')
     } finally {
       setLoading(false)
     }
@@ -107,11 +111,6 @@ export default function Contact() {
                   Instagram
                 </a>  
               </div>
-            </div>
-            <div className="info-item">
-              <div className="info-icon">📍</div>
-              <h3>Location</h3>
-              <p>India</p>
             </div>
           </div>
 

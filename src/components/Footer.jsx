@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Prannav</h3>
+            <h3>Prannav P</h3>
             <p>Full Stack Developer & Web Enthusiast</p>
           </div>
           <div className="footer-section">

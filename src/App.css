@@ -97,6 +97,9 @@ main {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
 }
 
 .btn-primary:hover {
@@ -104,17 +107,97 @@ main {
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
+.btn-primary:active {
+  transform: translateY(0);
+}
+
 .btn-secondary {
   background-color: transparent;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
+  transition: var(--transition);
+  position: relative;
 }
 
 .btn-secondary:hover {
   background-color: var(--primary-color);
   color: white;
   transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
 }
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Link Hover Effects */
+a:not(.btn) {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+a:not(.btn):hover::after {
+  width: 100%;
+}
+
+/* Form Input Animations */
+input, textarea, select {
+  transition: var(--transition);
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+  padding: 10px 12px;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  transform: scale(1.01);
+}
+
+input::placeholder, textarea::placeholder {
+  transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* Page Transition */
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app {
+  animation: pageLoad 0.6s ease-out;
+}
+
+/* Responsive Design */
 
 /* Responsive Design */
 @media (max-width: 768px) {
