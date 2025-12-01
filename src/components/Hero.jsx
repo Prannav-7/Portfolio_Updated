@@ -12,7 +12,8 @@ export default function Hero() {
             I'm passionate about building beautiful and functional web applications using modern technologies like React, JavaScript, and more.
           </p>
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">View My Work</a>
+            <a href="/resume.pdf" download className="btn btn-primary">Download Resume</a>
+            <a href="#projects" className="btn btn-secondary">View My Work</a>
             <a href="#contact" className="btn btn-secondary">Get In Touch</a>
           </div>
           <div className="social-links">
@@ -26,12 +27,6 @@ export default function Hero() {
   Instagram
 </a>
 
-          </div>
-        </div>
-        <div className="hero-image">
-          <div className="profile-picture-container">
-            <img src="src/assets/profile.jpg" alt="Prannav P - Full Stack Developer" className="profile-picture" />
-            <div className="profile-glow"></div>
           </div>
         </div>
       </div>
