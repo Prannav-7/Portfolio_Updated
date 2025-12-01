@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
         <div className="hero-image">
           <div className="profile-picture-container">
-            <img src="/profile.jpg" alt="Prannav P - Full Stack Developer" className="profile-picture" />
+            <img src="src/assets/profile.jpg" alt="Prannav P - Full Stack Developer" className="profile-picture" />
             <div className="profile-glow"></div>
           </div>
         </div>
