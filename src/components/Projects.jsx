@@ -9,7 +9,6 @@ const PROJECTS = [
     description: 'Full-stack e-commerce application for electronics. Built with React frontend and Node.js backend with MongoDB.',
     tags: ['React', 'Node.js', 'MongoDB', 'Express'],
     github: 'https://github.com/Prannav-7/JaimaruthiElectricalandHardwaresStore-ElectroStore.git',
-    link: 'https://electro-store-client.vercel.app/',
     featured: true
   },
   {

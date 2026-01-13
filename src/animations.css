@@ -77,7 +77,206 @@
   }
 }
 
-/* 3D Interactive Elements */
+/* ===== NEW ADVANCED 3D EFFECTS ===== */
+
+/* Morphing Blob Animation */
+@keyframes morphBlob {
+  0%, 100% {
+    transform: perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    border-radius: 50%;
+  }
+  25% {
+    transform: perspective(1200px) rotateX(45deg) rotateY(45deg) rotateZ(30deg) scale(1.1);
+    border-radius: 40% 60% 50% 50%;
+  }
+  50% {
+    transform: perspective(1200px) rotateX(90deg) rotateY(90deg) rotateZ(60deg) scale(1.05);
+    border-radius: 50% 40% 60% 50%;
+  }
+  75% {
+    transform: perspective(1200px) rotateX(45deg) rotateY(-45deg) rotateZ(-30deg) scale(1.1);
+    border-radius: 60% 50% 40% 60%;
+  }
+}
+
+/* Rotating Prism */
+@keyframes rotatePrism {
+  0% {
+    transform: perspective(1500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: perspective(1500px) rotateX(180deg) rotateY(180deg) rotateZ(45deg);
+  }
+  100% {
+    transform: perspective(1500px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* Wave Motion */
+@keyframes waveMotion {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(15px);
+  }
+  50% {
+    transform: translateY(0px) translateX(30px);
+  }
+  75% {
+    transform: translateY(20px) translateX(15px);
+  }
+}
+
+/* Floating Particles */
+@keyframes floatParticle1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+  }
+  33% {
+    transform: translate3d(100px, -80px, 150px) rotateX(60deg) rotateY(60deg);
+  }
+  66% {
+    transform: translate3d(-100px, 80px, -150px) rotateX(-60deg) rotateY(-60deg);
+  }
+}
+
+@keyframes floatParticle2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: translate3d(-120px, 60px, 100px) rotateX(45deg) rotateY(-45deg) rotateZ(45deg);
+  }
+}
+
+@keyframes floatParticle3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate3d(80px, -100px, 120px) rotateZ(360deg);
+  }
+}
+
+/* Neon Glow Pulse */
+@keyframes neonGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3), 0 0 10px rgba(52, 152, 219, 0.1);
+    text-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.8), 0 0 40px rgba(52, 152, 219, 0.4);
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+  }
+}
+
+/* Infinite Spin with Orbit */
+@keyframes orbitSpin {
+  0% {
+    transform: perspective(1500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(-100px);
+  }
+  100% {
+    transform: perspective(1500px) rotateX(360deg) rotateY(360deg) rotateZ(360deg) translateZ(-100px);
+  }
+}
+
+/* Pulse Scale with 3D Depth */
+@keyframes pulse3D {
+  0%, 100% {
+    transform: scale(1) translateZ(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15) translateZ(50px);
+    opacity: 0.8;
+  }
+}
+
+/* Flip Card with Rotation */
+@keyframes flipCard {
+  0% {
+    transform: perspective(1200px) rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: perspective(1200px) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(1200px) rotateY(180deg);
+    opacity: 1;
+  }
+}
+
+/* Stagger Reveal Animation */
+@keyframes staggerReveal {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(90deg) translateY(50px) translateZ(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translateY(0px) translateZ(0px);
+  }
+}
+
+/* Rainbow Shimmer */
+@keyframes rainbowShimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Bounce with 3D perspective */
+@keyframes bounce3D {
+  0%, 100% {
+    transform: perspective(1200px) translateY(0) translateZ(0);
+  }
+  25% {
+    transform: perspective(1200px) translateY(-30px) translateZ(30px) rotateX(10deg);
+  }
+  50% {
+    transform: perspective(1200px) translateY(-50px) translateZ(60px) rotateX(20deg);
+  }
+  75% {
+    transform: perspective(1200px) translateY(-30px) translateZ(30px) rotateX(10deg);
+  }
+}
+
+/* Light Trail Effect */
+@keyframes lightTrail {
+  0% {
+    box-shadow: -100px 0 20px rgba(52, 152, 219, 0.5), 0 0 20px rgba(52, 152, 219, 0.3);
+  }
+  100% {
+    box-shadow: 100px 0 20px rgba(52, 152, 219, 0.5), 0 0 20px rgba(52, 152, 219, 0.3);
+  }
+}
+
+/* Kaleidoscope Rotation */
+@keyframes kaleidoscope {
+  0% {
+    transform: perspective(2000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: perspective(2000px) rotateX(120deg) rotateY(120deg) rotateZ(120deg);
+  }
+  50% {
+    transform: perspective(2000px) rotateX(240deg) rotateY(240deg) rotateZ(240deg);
+  }
+  75% {
+    transform: perspective(2000px) rotateX(120deg) rotateY(-120deg) rotateZ(-120deg);
+  }
+  100% {
+    transform: perspective(2000px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* ===== 3D INTERACTIVE ELEMENTS ===== */
+
 .card-3d {
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
@@ -103,6 +302,50 @@
   animation: flip3D 12s linear infinite;
 }
 
+.morph-blob {
+  animation: morphBlob 6s ease-in-out infinite;
+}
+
+.prism-rotate {
+  animation: rotatePrism 10s linear infinite;
+}
+
+.wave-motion {
+  animation: waveMotion 4s ease-in-out infinite;
+}
+
+.particle-float {
+  animation: floatParticle1 15s ease-in-out infinite;
+}
+
+.neon-glow {
+  animation: neonGlowPulse 2s ease-in-out infinite;
+}
+
+.orbit-spin {
+  animation: orbitSpin 8s linear infinite;
+}
+
+.pulse-3d {
+  animation: pulse3D 2.5s ease-in-out infinite;
+}
+
+.flip-card-anim {
+  animation: flipCard 3s ease-in-out infinite;
+}
+
+.bounce-3d {
+  animation: bounce3D 3s ease-in-out infinite;
+}
+
+.light-trail {
+  animation: lightTrail 3s ease-in-out infinite;
+}
+
+.kaleidoscope-rotate {
+  animation: kaleidoscope 8s linear infinite;
+}
+
 /* Glass Morphism Cards */
 .glass {
   background: rgba(255, 255, 255, 0.1);
@@ -126,5 +369,21 @@
   
   .tilt-element {
     animation: none;
+  }
+
+  .morph-blob {
+    animation: morphBlob 8s ease-in-out infinite;
+  }
+
+  .prism-rotate {
+    animation: rotatePrism 15s linear infinite;
+  }
+
+  .orbit-spin {
+    animation: orbitSpin 12s linear infinite;
+  }
+
+  .kaleidoscope-rotate {
+    animation: kaleidoscope 12s linear infinite;
   }
 }
