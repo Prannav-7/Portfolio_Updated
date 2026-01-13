@@ -56,10 +56,41 @@
     color: #daa520;
 }
 
-.info-card .social-links {
+.info-card .social-links-contact {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     flex-direction: column;
+}
+
+.social-link-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.social-link-item:hover {
+    background: rgba(218, 165, 32, 0.1);
+    border-color: rgba(218, 165, 32, 0.3);
+    transform: translateX(5px);
+}
+
+.social-link-item svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.social-link-item:hover svg {
+    transform: scale(1.1);
+    color: #daa520;
+}
+
+.social-link-item span {
+    font-weight: 500;
 }
 
 .contact-form {
