@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import '../styles/Contact.css'
+import { scrollVariants, fadeInLeft, fadeInRight } from '../hooks/useScrollAnimation'
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -43,13 +45,25 @@ export default function Contact() {
     return (
         <section className="contact" id="contact">
             <div className="container">
-                <div className="section-header">
+                <motion.div
+                    className="section-header"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={scrollVariants}
+                >
                     <h2>Get In Touch</h2>
                     <p>Let's connect and discuss your next project</p>
-                </div>
+                </motion.div>
 
                 <div className="contact-wrapper">
-                    <div className="contact-info">
+                    <motion.div
+                        className="contact-info"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={fadeInLeft}
+                    >
                         <div className="info-card">
                             <h3>📧 Email</h3>
                             <a href="mailto:prannav2511@gmail.com">prannav2511@gmail.com</a>
@@ -68,13 +82,24 @@ export default function Contact() {
                                 <a href="https://instagram.com/_im_prannav" target="_blank" rel="noopener noreferrer">Instagram</a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <form className="contact-form" onSubmit={handleSubmit}>
+                    <motion.form
+                        className="contact-form"
+                        onSubmit={handleSubmit}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={fadeInRight}
+                    >
                         {submitted && (
-                            <div className="success-message">
+                            <motion.div
+                                className="success-message"
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
                                 ✓ Thank you! Message sent successfully!
-                            </div>
+                            </motion.div>
                         )}
 
                         <div className="form-group">
@@ -116,10 +141,16 @@ export default function Contact() {
                             ></textarea>
                         </div>
 
-                        <button type="submit" className="btn-submit" disabled={loading}>
+                        <motion.button
+                            type="submit"
+                            className="btn-submit"
+                            disabled={loading}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                        >
                             {loading ? 'Sending...' : 'Send Message'}
-                        </button>
-                    </form>
+                        </motion.button>
+                    </motion.form>
                 </div>
             </div>
         </section>

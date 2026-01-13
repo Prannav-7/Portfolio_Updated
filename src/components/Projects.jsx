@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import ProjectCard from './ProjectCard'
 import '../styles/Projects.css'
+import { scrollVariants, staggerContainer } from '../hooks/useScrollAnimation'
 
 const PROJECTS = [
   {
@@ -95,12 +97,24 @@ export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          className="section-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={scrollVariants}
+        >
           <h2>My Projects</h2>
           <p>A collection of my recent work and personal projects</p>
-        </div>
+        </motion.div>
 
-        <div className="projects-filters">
+        <motion.div
+          className="projects-filters"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={scrollVariants}
+        >
           <button
             className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
             onClick={() => setFilter('all')}
@@ -113,29 +127,49 @@ export default function Projects() {
           >
             Featured
           </button>
-        </div>
+        </motion.div>
 
-        <div className="tags-filter">
+        <motion.div
+          className="tags-filter"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={staggerContainer}
+        >
           {allTags.map(tag => (
-            <button
+            <motion.button
               key={tag}
               className={`tag ${selectedTag === tag ? 'active' : ''}`}
               onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+              variants={scrollVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {tag}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="projects-grid">
+        <motion.div
+          className="projects-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={staggerContainer}
+        >
           {filteredProjects.length > 0 ? (
-            filteredProjects.map(project => (
-              <ProjectCard key={project.id} project={project} />
+            filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                variants={scrollVariants}
+              >
+                <ProjectCard project={project} />
+              </motion.div>
             ))
           ) : (
             <p className="no-projects">No projects found matching your filters</p>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

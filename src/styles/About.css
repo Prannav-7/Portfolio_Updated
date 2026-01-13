@@ -1,51 +1,74 @@
 .about {
-    padding: 80px 0;
-    background-color: var(--bg-light);
+    padding: 100px 0;
+    background: #0d1117;
+}
+
+.section-header h2 {
+    color: #ffffff;
+}
+
+.section-header p {
+    color: #8b8f9f;
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 60px;
-    align-items: center;
+    align-items: start;
 }
 
 .about-text h3 {
     font-size: 2rem;
-    color: var(--text-dark);
-    margin-bottom: 20px;
+    color: #ffffff;
+    margin-bottom: 24px;
+    font-weight: 700;
 }
 
 .about-text p {
-    color: var(--text-light);
+    color: #a0a4b8;
     line-height: 1.8;
     margin-bottom: 20px;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 .skills {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .skills h3 {
-    font-size: 1.5rem;
-    color: var(--text-dark);
-    margin-bottom: 25px;
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: 700;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 25px;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(218, 165, 32, 0.3);
+    transform: translateY(-3px);
 }
 
 .skill-category h4 {
-    color: var(--primary-color);
+    color: #daa520;
     font-size: 1.1rem;
     margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 .skill-category ul {
@@ -53,7 +76,7 @@
 }
 
 .skill-category ul li {
-    color: var(--text-light);
+    color: #a0a4b8;
     padding: 8px 0;
     font-size: 0.95rem;
     position: relative;
@@ -61,52 +84,53 @@
 }
 
 .skill-category ul li::before {
-    content: '→';
+    content: '▸';
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: #daa520;
     font-weight: bold;
 }
 
 .about-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
 
 .stat {
     text-align: center;
-    padding: 20px;
-    background-color: var(--bg-darker);
-    border-radius: 12px;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
     transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .stat:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(218, 165, 32, 0.3);
+    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.1);
 }
 
 .stat h3 {
-    font-size: 2rem;
-    background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 2.5rem;
+    color: #daa520;
     margin-bottom: 10px;
+    font-weight: 800;
 }
 
 .stat p {
-    color: var(--text-light);
-    font-weight: 600;
-    font-size: 0.95rem;
+    color: #a0a4b8;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .about {
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
     .about-content {
@@ -115,11 +139,11 @@
     }
 
     .about-text h3 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .skills h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .skills-grid {
@@ -128,15 +152,21 @@
     }
 
     .about-stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     .stat {
-        padding: 15px;
+        padding: 20px 15px;
     }
 
     .stat h3 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-stats {
+        grid-template-columns: 1fr;
     }
 }

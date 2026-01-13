@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import '../styles/Header.css'
+import profileImg from '../assets/profile.jpg'
 
-export default function Header({ darkMode, setDarkMode }) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -21,19 +22,13 @@ export default function Header({ darkMode, setDarkMode }) {
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
         <div className="header-actions">
-          <button 
-            className="theme-toggle"
-            onClick={() => setDarkMode(!darkMode)}
-            aria-label="Toggle dark mode"
-          >
-            {darkMode ? '☀️' : '🌙'}
-          </button>
-          <button 
+         
+          <button
             className={`hamburger ${menuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            <span>hhh</span>
+            <span></span>
             <span></span>
             <span></span>
           </button>
