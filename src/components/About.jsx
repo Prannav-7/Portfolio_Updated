@@ -13,14 +13,14 @@ export default function About() {
           <div className="about-text">
             <h3>I'm a passionate developer from India</h3>
             <p>
-              I'm a student at Kongu Engineering College with a strong passion for web development and software engineering. 
+              I'm a student at Kongu Engineering College with a strong passion for web development and software engineering.
               With experience in full-stack development, I've worked on various projects ranging from e-commerce platforms to IoT applications.
             </p>
             <p>
-              I love learning new technologies and constantly improving my skills. My journey in programming has been 
+              I love learning new technologies and constantly improving my skills. My journey in programming has been
               exciting, and I'm eager to contribute to innovative projects and solve real-world problems.
             </p>
-            
+
             <div className="skills">
               <h3>Skills & Technologies</h3>
               <div className="skills-grid">

@@ -82,7 +82,7 @@ export default function Projects() {
   const [selectedTag, setSelectedTag] = useState(null)
 
   const allTags = [...new Set(PROJECTS.flatMap(p => p.tags))]
-  
+
   const filteredProjects = PROJECTS.filter(project => {
     if (filter !== 'all') {
       const featured = filter === 'featured' ? project.featured : !project.featured
@@ -101,13 +101,13 @@ export default function Projects() {
         </div>
 
         <div className="projects-filters">
-          <button 
+          <button
             className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
             onClick={() => setFilter('all')}
           >
             All Projects
           </button>
-          <button 
+          <button
             className={`filter-btn ${filter === 'featured' ? 'active' : ''}`}
             onClick={() => setFilter('featured')}
           >

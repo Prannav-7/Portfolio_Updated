@@ -93,7 +93,7 @@
   border-color: var(--primary-color);
   transform: perspective(1200px) rotateX(-3deg) translateY(-2px) scale(1.05);
   box-shadow: 0 8px 20px rgba(44, 62, 80, 0.2),
-              0 0 15px rgba(52, 152, 219, 0.15);
+    0 0 15px rgba(52, 152, 219, 0.15);
 }
 
 .tags-filter {
@@ -142,7 +142,7 @@
   border-color: var(--primary-color);
   transform: perspective(1200px) rotateX(-3deg) scale(1.08);
   box-shadow: 0 6px 18px rgba(44, 62, 80, 0.25),
-              0 0 12px rgba(52, 152, 219, 0.2);
+    0 0 12px rgba(52, 152, 219, 0.2);
 }
 
 .projects-grid {
@@ -166,6 +166,7 @@
     opacity: 0;
     transform: perspective(1200px) rotateX(90deg) translateY(40px) translateZ(-100px);
   }
+
   to {
     opacity: 1;
     transform: perspective(1200px) rotateX(0deg) translateY(0) translateZ(0);
@@ -177,24 +178,45 @@
     opacity: 0;
     transform: perspective(1200px) rotateX(90deg) translateY(50px) translateZ(-150px);
   }
+
   to {
     opacity: 1;
     transform: perspective(1200px) rotateX(0deg) translateY(0) translateZ(0);
   }
 }
 
-.projects-grid > div {
+.projects-grid>div {
   animation: staggerSlideIn 0.7s cubic-bezier(0.23, 1, 0.320, 1) forwards;
   animation-fill-mode: both;
 }
 
-.projects-grid > div:nth-child(1) { animation-delay: 0.15s; }
-.projects-grid > div:nth-child(2) { animation-delay: 0.3s; }
-.projects-grid > div:nth-child(3) { animation-delay: 0.45s; }
-.projects-grid > div:nth-child(4) { animation-delay: 0.6s; }
-.projects-grid > div:nth-child(5) { animation-delay: 0.75s; }
-.projects-grid > div:nth-child(6) { animation-delay: 0.9s; }
-.projects-grid > div:nth-child(n+7) { animation-delay: 1s; }
+.projects-grid>div:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.projects-grid>div:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.projects-grid>div:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.projects-grid>div:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.projects-grid>div:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+.projects-grid>div:nth-child(6) {
+  animation-delay: 0.9s;
+}
+
+.projects-grid>div:nth-child(n+7) {
+  animation-delay: 1s;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
