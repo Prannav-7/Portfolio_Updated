@@ -22,7 +22,7 @@ export default function Header() {
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
         <div className="header-actions">
-         
+
           <button
             className={`hamburger ${menuOpen ? 'active' : ''}`}
             onClick={toggleMenu}

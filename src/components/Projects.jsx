@@ -23,59 +23,94 @@ const PROJECTS = [
   },
   {
     id: 3,
+    title: 'Noble Bites',
+    description: 'A premium e-commerce platform for food and snacks, featuring a modern UI and seamless ordering experience.',
+    tags: ['React', 'Node.js', 'Firebase'],
+    github: 'https://github.com/Prannav-7/noble-bites-frontend',
+    featured: true
+  },
+  {
+    id: 4,
+    title: 'NVG8 Clone',
+    description: 'A high-fidelity clone of the nvg8.io website, featuring complex scroll animations and organic SVG shapes.',
+    tags: ['React', 'SVG', 'GSAP'],
+    github: 'https://github.com/Prannav-7/nvg8.io-clone',
+    featured: true
+  },
+  {
+    id: 5,
+    title: 'Fresh Flow',
+    description: 'A modern e-commerce application focusing on fresh produce and seamless delivery tracking.',
+    tags: ['React'],
+    github: 'https://github.com/Prannav-7/freshflow-frontend',
+    featured: true
+  },
+  {
+    id: 6,
+    title: 'Standup Comedy App',
+    description: 'A platform for discovering and booking standup comedy shows with a vibrant and energetic UI.',
+    tags: ['React', 'API Integration', 'Responsive Design'],
+    github: 'https://github.com/Prannav-7/standup_comedy',
+    featured: true
+  },
+  {
+    id: 7,
     title: 'Incrivia Tourist App',
     description: 'Tourism management application connecting travelers with local attractions, hotels, and tour guides.',
     tags: ['JavaScript', 'React', 'Node.js'],
     github: 'https://github.com/Prannav-7/Incrivia-Touristapp'
   },
   {
-    id: 4,
+    id: 8,
     title: 'Docart - Flipkart Clone',
     description: 'E-commerce platform clone with product catalog, shopping cart, and checkout functionality.',
     tags: ['JavaScript', 'React', 'Responsive Design'],
     github: 'https://github.com/Prannav-7/Docart-Flipkart_Clone'
   },
   {
-    id: 5,
+    id: 9,
     title: 'Shop App',
     description: 'Mobile-friendly shopping application with product filtering and dynamic cart management.',
-    tags: ['JavaScript', 'React', 'CSS'],
+    tags: ['JavaScript', 'React'],
     github: 'https://github.com/Prannav-7/shop-app'
   },
   {
-    id: 6,
+    id: 10,
     title: 'Nutz Login Page',
     description: 'Modern authentication UI with validation, responsive design, and smooth animations.',
-    tags: ['JavaScript', 'HTML/CSS', 'Form Validation'],
+    tags: ['JavaScript'],
     github: 'https://github.com/Prannav-7/Nutz_LoginPage'
   },
   {
-    id: 7,
+    id: 11,
     title: 'Text Converter',
     description: 'Utility tool for text manipulation, conversion, and formatting with multiple options.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
+    tags: ['JavaScript'],
     github: 'https://github.com/Prannav-7/Text_Convertor'
   },
   {
-    id: 8,
+    id: 12,
     title: 'Hostel Management System',
     description: 'Flutter-based hostel management application for room allocation and student records.',
     tags: ['Flutter', 'Dart', 'Mobile'],
-    github: 'https://github.com/Prannav-7/Hostel_Management_usingFlutter'
+    github: 'https://github.com/Prannav-7/Hostel_Management_usingFlutter',
+    featured: true
   },
   {
-    id: 9,
+    id: 13,
     title: 'Face Detection IOT',
     description: 'IoT project implementing face detection and recognition using computer vision.',
-    tags: ['Python', 'IoT', 'Computer Vision'],
-    github: 'https://github.com/Prannav-7/FaceDetectionUsingIOT'
+    tags: ['Python', 'IoT'],
+    github: 'https://github.com/Prannav-7/FaceDetectionUsingIOT',
+    featured: true
   },
   {
-    id: 10,
-    title: 'Jaimaruthi Electrical Store',
-    description: 'E-commerce platform for electrical and hardware products with complete shopping workflow.',
-    tags: ['JavaScript', 'React', 'E-commerce'],
-    github: 'https://github.com/Prannav-7/JaimaruthiElectricalandHardwaresStore-ElectroStore'
+    id: 14,
+    title: 'Omegaa',
+    description: 'A modern landing page showcase featuring smooth transitions and a clean aesthetic.',
+    tags: ['JavaScript', 'Web Design'],
+    github: 'https://github.com/Prannav-7/Omegaa',
+    featured: true
   }
 ]
 
@@ -83,16 +118,24 @@ export default function Projects() {
   const [filter, setFilter] = useState('all')
   const [selectedTag, setSelectedTag] = useState(null)
 
-  const allTags = [...new Set(PROJECTS.flatMap(p => p.tags))]
+  // Only show tags that have projects in the current filter category
+  const availableTags = [...new Set(PROJECTS
+    .filter(p => filter === 'all' || p.featured)
+    .flatMap(p => p.tags)
+  )]
 
   const filteredProjects = PROJECTS.filter(project => {
     if (filter !== 'all') {
-      const featured = filter === 'featured' ? project.featured : !project.featured
-      if (!featured) return false
+      if (!project.featured) return false
     }
     if (selectedTag && !project.tags.includes(selectedTag)) return false
     return true
   })
+
+  // Helper to handle tag clicking
+  const handleTagClick = (tag) => {
+    setSelectedTag(selectedTag === tag ? null : tag)
+  }
 
   return (
     <section className="projects" id="projects">
@@ -136,11 +179,11 @@ export default function Projects() {
           viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
         >
-          {allTags.map(tag => (
+          {availableTags.map(tag => (
             <motion.button
               key={tag}
               className={`tag ${selectedTag === tag ? 'active' : ''}`}
-              onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+              onClick={() => handleTagClick(tag)}
               variants={scrollVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
