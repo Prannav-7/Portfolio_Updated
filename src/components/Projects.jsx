@@ -204,10 +204,10 @@ export default function Projects() {
         </motion.div>
 
         <motion.div
+          key={`${filter}-${selectedTag}`}
           className="projects-grid"
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          animate="visible"
           variants={staggerContainer}
         >
           {filteredProjects.length > 0 ? (
