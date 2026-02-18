@@ -99,7 +99,7 @@
 
 .footer-section .social-links a:hover {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+  color: #ffffffdd;
   border-color: var(--secondary-color);
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
