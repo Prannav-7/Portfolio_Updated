@@ -6,6 +6,14 @@ import { scrollVariants, staggerContainer } from '../hooks/useScrollAnimation'
 
 const PROJECTS = [
   {
+    id: 0,
+    title: 'Portfolio',
+    description: 'My personal developer portfolio showcasing projects, skills, and experience. Built with React and modern animations.',
+    tags: ['React', 'Framer Motion', 'Web Design'],
+    github: 'https://github.com/Prannav-7/portfolio-react',
+    featured: true
+  },
+  {
     id: 1,
     title: 'Electro Store',
     description: 'Full-stack e-commerce application for electronics. Built with React frontend and Node.js backend with MongoDB.',
@@ -27,6 +35,7 @@ const PROJECTS = [
     description: 'A premium e-commerce platform for food and snacks, featuring a modern UI and seamless ordering experience.',
     tags: ['React', 'Node.js', 'Firebase'],
     github: 'https://github.com/Prannav-7/noble-bites-frontend',
+    link: 'https://noble-bites.vercel.app/',
     featured: true
   },
   {
@@ -43,6 +52,7 @@ const PROJECTS = [
     description: 'A modern e-commerce application focusing on fresh produce and seamless delivery tracking.',
     tags: ['React'],
     github: 'https://github.com/Prannav-7/freshflow-frontend',
+    link: 'https://fleshflow.vercel.app/',
     featured: true
   },
   {
@@ -130,7 +140,7 @@ export default function Projects() {
     }
     if (selectedTag && !project.tags.includes(selectedTag)) return false
     return true
-  })
+  }).sort((a, b) => (b.link ? 1 : 0) - (a.link ? 1 : 0))
 
   // Helper to handle tag clicking
   const handleTagClick = (tag) => {
